@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument("--save_root", type=str, default="./output")
     parser.add_argument("--save_msg", type=str, default="")
 
-    return parser.parse_args()
+    return parser.parse_args([])
 
 
 def make_template(opt):

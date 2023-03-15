@@ -81,11 +81,11 @@ m = SelfReformerModel(
     use_gui=True,
     custom_inference_settings=os.path.join(root_source_path, "custom_settings.yaml"),
 )
-m.load_on_device(m.model_dir, device)
 
 if sly.is_production():
     m.serve()
 else:
+    m.load_on_device(m.model_dir, device)
     image_path = "./demo_data/image_01.jpg"
     # rect = sly.Rectangle(360, 542, 474, 700).to_json()
     # ann = m._inference_image_path(image_path=image_path, settings={"rectangle": rect, "bbox_padding":"66%"}, data_to_return={})
