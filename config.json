@@ -15,7 +15,7 @@
   ],
   "need_gpu": true,
   "community_agent": false,
-  "docker_image": "supervisely/self-reformer:1.0.0",
+  "docker_image": "supervisely/self-reformer:1.0.1",
   "instance_version": "6.7.16",
   "entrypoint": "python -m uvicorn src.main:m.app --app-dir ./serve --host 0.0.0.0 --port 8000 --ws websockets",
   "port": 8000,
