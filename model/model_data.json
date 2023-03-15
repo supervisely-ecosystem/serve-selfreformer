@@ -1,0 +1,8 @@
+[
+    {
+        "Model": "SelfReformer",
+        "Size": "367 MB",
+        "Pretrained on": "DUTS-TR",
+        "F-measure": "0.916"
+    }
+]

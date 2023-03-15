@@ -1,0 +1,5 @@
+# bounding boxes padding for mask correction
+# can be measured either in pixels (e.g. 100px) or in percentages (e.g. 10%)
+bbox_padding: 66%
+# threshold for regulating mask detalization (0 < int < 255)
+pixel_confidence_threshold: 200
