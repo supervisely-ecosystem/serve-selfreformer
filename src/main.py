@@ -31,10 +31,10 @@ class SelfReformerModel(sly.nn.inference.SalientObjectSegmentation):
         device: Literal["cpu", "cuda", "cuda:0", "cuda:1", "cuda:2", "cuda:3"] = "cpu",
     ):
         self.device = device
-        sly.logger.debug("Downloading weights...")
+        sly.logger.info("Downloading weights...")
         self.weights_path = download_selfreformer()
         
-        sly.logger.debug("Building the model...")
+        sly.logger.info("Building the model...")
         self.opt = selfreformer_api.get_opt()
         self.model = selfreformer_api.build_model(self.opt, self.weights_path, self.device)
         self.aug = selfreformer_api.get_augment(self.opt)
