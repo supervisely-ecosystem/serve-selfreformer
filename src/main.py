@@ -1,4 +1,5 @@
-import os, sys
+import os
+import numpy as np
 import torch
 from pathlib import Path
 import cv2
@@ -21,9 +22,6 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 root_source_path = str(Path(__file__).parents[1])
 model_data_path = os.path.join(root_source_path, "model", "model_data.json")
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-print("Using device:", device)
-
 class SelfReformerModel(sly.nn.inference.SalientObjectSegmentation):
     def load_on_device(
         self,
@@ -32,7 +30,7 @@ class SelfReformerModel(sly.nn.inference.SalientObjectSegmentation):
     ):
         self.device = device
         sly.logger.info("Downloading weights...")
-        self.weights_path = download_selfreformer()
+        self.weights_path = download_selfreformer(os.path.join(model_dir, "best_DUTS-TE.pt"))
         
         sly.logger.info("Building the model...")
         self.opt = selfreformer_api.get_opt()
@@ -50,7 +48,13 @@ class SelfReformerModel(sly.nn.inference.SalientObjectSegmentation):
         pred, pred_sal, matt_img = selfreformer_api.predict(input, self.model, self.device)
         pred_sal = cv2.resize(pred_sal, (w, h), interpolation=cv2.INTER_LINEAR)
         mask = self.binarize_mask(pred_sal, threshold)
-        return [sly.nn.PredictionMask(class_name=self.class_names[0], mask=mask)]
+        
+        if np.any(mask):
+            result = [sly.nn.PredictionMask(class_name=self.class_names[0], mask=mask)]
+        else:
+            result = []
+
+        return result
     
     def get_models(self):
         model_data = sly.json.load_json_file(model_data_path)
@@ -88,12 +92,14 @@ m = SelfReformerModel(
 if sly.is_production():
     m.serve()
 else:
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print("Using device:", device)
     m.load_on_device(m.model_dir, device)
-    image_path = "./demo_data/image_01.jpg"
+    image_path = "./demo_data/image_03.jpg"
     # rect = sly.Rectangle(360, 542, 474, 700).to_json()
     # ann = m._inference_image_path(image_path=image_path, settings={"rectangle": rect, "bbox_padding":"66%"}, data_to_return={})
     # ann.draw_pretty(sly.image.read(image_path), [255,0,0], 7, output_path="out.png")
     results = m.predict(image_path, settings={})
-    vis_path = "./demo_data/image_01_prediction.jpg"
+    vis_path = "./demo_data/image_03_prediction.jpg"
     m.visualize(results, image_path, vis_path, thickness=0)
     print(f"predictions and visualization have been saved: {vis_path}")
