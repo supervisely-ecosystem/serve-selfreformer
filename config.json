@@ -11,6 +11,7 @@
     "development"
   ],
   "session_tags": [
+    "deployed_nn",
     "deployed_nn_object_segmentation"
   ],
   "need_gpu": true,
