@@ -21,7 +21,7 @@
   "entrypoint": "python -m uvicorn src.main:m.app --app-dir ./serve --host 0.0.0.0 --port 8000 --ws websockets",
   "port": 8000,
   "task_location": "application_sessions",
-  "icon":"https://user-images.githubusercontent.com/115161827/227239633-7cd32f01-b25a-4e0b-ad75-77c2c85128a5.jpg",
+  "icon": "https://user-images.githubusercontent.com/115161827/227239633-7cd32f01-b25a-4e0b-ad75-77c2c85128a5.jpg",
   "icon_cover": true,
-  "poster":"https://user-images.githubusercontent.com/115161827/227239618-52cfebce-8b23-4687-9e36-3c8d37b3a3a5.jpg"
+  "poster": "https://user-images.githubusercontent.com/115161827/227239618-52cfebce-8b23-4687-9e36-3c8d37b3a3a5.jpg"
 }
