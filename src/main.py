@@ -82,7 +82,10 @@ class SelfReformerModel(sly.nn.inference.SalientObjectSegmentation):
 
     def get_classes(self) -> List[str]:
         return self.class_names
-
+    
+    def support_custom_models(self):
+        return False
+    
 
 m = SelfReformerModel(
     use_gui=True,
