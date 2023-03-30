@@ -5,7 +5,11 @@
 
 <p align="center">
   <a href="#Overview">Overview</a> •
-  <a href="#How-To-Run">How To Run</a> 
+  <a href="#Pretrained-Model">Pretrained Model</a> •
+  <a href="#How-To-Run">How To Run</a> •
+  <a href="#Inference-Settings">Inference Settings</a> •
+  <a href="#Related-apps">Related Apps</a> •
+  <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
 [![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/serve-selfreformer)
