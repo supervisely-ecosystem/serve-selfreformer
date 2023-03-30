@@ -7,8 +7,7 @@
     "neural network",
     "images",
     "salient object segmentation",
-    "serve",
-    "development"
+    "serve"
   ],
   "session_tags": [
     "deployed_nn",
