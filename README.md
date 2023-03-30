@@ -41,11 +41,18 @@ This SelfReformer model is trained on [DUTS-TR](http://saliencydetection.net/dut
 1. Start the application from Ecosystem
 2. Open the app in your browser
 
-<img src="https://user-images.githubusercontent.com/31512713/228268903-959167de-1097-437a-a609-c6c514803ff2.png" width="66%"/>
+<img src="https://user-images.githubusercontent.com/31512713/228268903-959167de-1097-437a-a609-c6c514803ff2.png" width="80%"/>
 
 3. Select the model you want to deploy *(there is only one yet)*
 4. Click **"SERVE"** button.
 5. ✅ That's it! Now you can use other apps with your model.
+
+
+## Inference Settings
+
+- **bbox_padding**: (default 66%) when applying the model to a crop of an image (ROI), this bbox_padding will expand the crop at the boundaries, getting more image context to the model (may lead to more accurate preditctions). The value can be measured either in pixels (e.g. `100px`) or in percentages (e.g. `10%`)
+- **pixel_confidence_threshold**: (default 150). The model predicts a "soft" masks, i.e. the mask values are in range 0-255, but the mask in Supervisely is a Bitmap and has only two values: 0-1 (one bit). With this threshold we will treat the pixels in the mask as **0** if they are below the **threshold** and as **1** if above.
+
 
 ## Related Apps
 
