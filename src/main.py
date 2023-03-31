@@ -76,8 +76,8 @@ class SelfReformerModel(sly.nn.inference.SalientObjectSegmentation):
 
     def get_info(self):
         info = super().get_info()
-        info["videos_support"] = False
-        info["async_video_inference_support"] = False
+        info["videos_support"] = True
+        info["async_video_inference_support"] = True
         return info
 
     def get_classes(self) -> List[str]:
