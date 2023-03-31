@@ -35,7 +35,13 @@ The app is a serving App that allows you to apply the model to an image inside t
 This SelfReformer model is trained on [DUTS-TR](http://saliencydetection.net/duts/) dataset and achieves a good performance on this task (see [authors Readme](https://github.com/BarCodeReader/SelfReformer) and the [paper](https://arxiv.org/abs/2205.11283) for technical details and benchmarks)
 
 ### Prediction preview:
-![our evaluation](https://raw.githubusercontent.com/supervisely-ecosystem/serve-selfreformer/master/demo_data/image_03_prediction.jpg)
+| Input    | Prediction   |
+| -------- | ------------ |
+| ![bird](https://user-images.githubusercontent.com/31512713/229129414-b9fd8acf-11f0-467b-8e5e-5226d5f51426.jpg) | ![selfreformer](https://user-images.githubusercontent.com/31512713/229128975-e5802e8e-ed29-4227-87c5-5cc8b9843d0d.jpg) |
+
+
+
+
 
 ### Authors' comparing with other models:
 ![prediction previews](https://raw.githubusercontent.com/supervisely-ecosystem/serve-selfreformer/master/SelfReformer/asset/figure1.png)
