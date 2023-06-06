@@ -82,5 +82,5 @@ You can use deployed model in the following Supervisely Applications ⬇️
 
 ## Acknowledgment
 
-- Based on: [https://github.com/BarCodeReader/SelfReformer](https://github.com/BarCodeReader/SelfReformer) ![GitHub Org's stars](https://img.shields.io/github/stars/BarCodeReader/SelfReformer?style=social)
+- Based on: [https://github.com/BarCodeReader/SelfReformer](https://github.com/BarCodeReader/SelfReformer) ![GitHub Org's stars](https://img.shields.io/github/stars/BarCodeReader/SelfReformer?style=social). Code in this repository is distributed under the BSD 3-Clause license.
 - Paper: [https://arxiv.org/abs/2205.11283](https://arxiv.org/abs/2205.11283)
