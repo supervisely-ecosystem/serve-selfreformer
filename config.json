@@ -14,7 +14,8 @@
     "deployed_nn",
     "deployed_nn_object_segmentation"
   ],
-  "need_gpu": true,
+  "need_gpu": false,
+  "gpu": "preferred",
   "community_agent": false,
   "docker_image": "supervisely/self-reformer:1.0.1",
   "instance_version": "6.7.16",
