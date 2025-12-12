@@ -1,28 +1,28 @@
 {
-  "name": "Serve SelfReformer",
-  "type": "app",
-  "version": "2.0.0",
-  "description": "Deploy SelfReformer for salient object segmentation as a REST API service",
-  "categories": [
-    "neural network",
-    "images",
-    "videos",
-    "salient object segmentation",
-    "serve"
-  ],
-  "session_tags": [
-    "deployed_nn",
-    "deployed_nn_object_segmentation"
-  ],
-  "need_gpu": false,
-  "gpu": "preferred",
-  "community_agent": false,
-  "docker_image": "supervisely/self-reformer:1.0.1",
-  "instance_version": "6.7.16",
-  "entrypoint": "python -m uvicorn src.main:m.app --app-dir ./serve --host 0.0.0.0 --port 8000 --ws websockets",
-  "port": 8000,
-  "task_location": "application_sessions",
-  "icon": "https://user-images.githubusercontent.com/115161827/227239633-7cd32f01-b25a-4e0b-ad75-77c2c85128a5.jpg",
-  "icon_cover": true,
-  "poster": "https://user-images.githubusercontent.com/115161827/227239618-52cfebce-8b23-4687-9e36-3c8d37b3a3a5.jpg"
+    "name": "Serve SelfReformer",
+    "type": "app",
+    "version": "2.0.0",
+    "description": "Deploy SelfReformer for salient object segmentation as a REST API service",
+    "categories": [
+        "neural network",
+        "images",
+        "videos",
+        "salient object segmentation",
+        "serve"
+    ],
+    "session_tags": [
+        "deployed_nn",
+        "deployed_nn_object_segmentation"
+    ],
+    "need_gpu": false,
+    "gpu": "preferred",
+    "community_agent": false,
+    "docker_image": "supervisely/self-reformer:1.0.2",
+    "instance_version": "6.15.35",
+    "entrypoint": "python -m uvicorn src.main:m.app --app-dir ./serve --host 0.0.0.0 --port 8000 --ws websockets",
+    "port": 8000,
+    "task_location": "application_sessions",
+    "icon": "https://user-images.githubusercontent.com/115161827/227239633-7cd32f01-b25a-4e0b-ad75-77c2c85128a5.jpg",
+    "icon_cover": true,
+    "poster": "https://user-images.githubusercontent.com/115161827/227239618-52cfebce-8b23-4687-9e36-3c8d37b3a3a5.jpg"
 }
